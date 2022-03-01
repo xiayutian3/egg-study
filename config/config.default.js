@@ -18,6 +18,24 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  // 关闭csrf
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
+  // ejs模板引擎的配置
+  config.view = {
+    mapping: {
+      '.html': 'ejs',
+    },
+  };
+
+  config.ejs = {
+
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
