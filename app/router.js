@@ -33,4 +33,12 @@ module.exports = app => {
   // 测试扩展上下文 get、post获取参数统一
   router.get('/newContext', controller.jspang.newContext);
   router.post('/newContext', controller.jspang.newContext);
+
+  // 测试request的扩展
+  router.post('/newRequest', controller.jspang.newRequest);
+
+  // 测试responsede 的扩展
+  router.get('/newResponse', controller.jspang.newResponse);
+
+
 };

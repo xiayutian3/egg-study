@@ -5,8 +5,18 @@
 #     "name":"小红"
 # }
 
-POST http://127.0.0.1:7001/newContext  
+# POST http://127.0.0.1:7001/newContext  
+# Content-Type: application/json
+
+# {
+#     "name":"小红",
+#     "age":18
+# }
+
+
+POST http://127.0.0.1:7001/newRequest
 Content-Type: application/json
+token: 'jspang'
 
 {
     "name":"小红",

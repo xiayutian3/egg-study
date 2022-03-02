@@ -135,6 +135,28 @@ class JspangController extends Controller {
     ctx.body = 'newContext';
   }
 
+  // 测试request的扩展
+  async newRequest() {
+    const { ctx } = this;
+    const token = ctx.request.token;
+    ctx.body = {
+      status: 200,
+      body: token,
+    };
+  }
+
+
+  // 测试response的扩展
+  async newResponse() {
+    const ctx = this.ctx;
+    ctx.response.token = 'jspang.com';
+
+    // 测试helper的扩展
+    const testBase64 = ctx.helper.base64Encode('jspang.com');
+
+    ctx.body = testBase64;
+  }
+
 }
 
 module.exports = JspangController;
