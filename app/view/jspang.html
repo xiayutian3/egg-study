@@ -4,9 +4,75 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- //引入静态资源  绝对路径，相对路径引入都可以 --> 
+  <link rel="stylesheet" href="/public/css/default.css">
+  <!-- <link rel="stylesheet" href="public/css/default.css"> -->
   <title>Document</title>
 </head>
 <body>
+  <!-- 引入公共模板 -->
+  <% include header.html %>
+
+
     <h1>hello world</h1>
+    <h2>现在由<%= id %>号技师，为你服务!</h2>
+    <h3>你好，我是<%= name %><%= age %>岁</h3>
+    <ul>
+      <% for (var i = 0; i < skills.length; i++) { %>
+        <li><%= skills[i] %></li>
+      <%}%>
+    </ul>
+    <hr>
+    <h3><%=username%></h3>
+    <hr>
+    <p>方法扩展：<%=nowTime%></p>
+    <p>属性的扩展：<%=timeProp%></p>
+
+    <div>
+      <button onclick="add()">增加Cookie</button>
+      <button onclick="del()">删除Cookie</button>
+      <button onclick="editor()">修改Cookie</button>
+      <button onclick="show()">查看Cookie</button>
+  </div>
+
+
+    <!-- //修改分隔符后 $  建议不要随便修改-->
+    <!-- <h2>现在由<$= id $>号技师，为你服务!123</h2> -->
 </body>
+
+<script>
+  function add(){
+      fetch("/add",{
+          method:"post",
+          headers:{
+              "Content-type":"application/json"
+          }
+      });
+  }
+  function del(){
+      fetch("/del",{
+          method:"post",
+          headers:{
+              "Content-type":"application/json"
+          }
+      });
+  }
+  function editor(){
+      fetch("/editor",{
+          method:"post",
+          headers:{
+              "Content-type":"application/json"
+          }
+      });
+  }
+  function show(){
+      fetch("/show",{
+          method:"post",
+          headers:{
+              "Content-type":"application/json"
+          }
+      });
+  }
+</script>
+
 </html>

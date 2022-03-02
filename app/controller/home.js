@@ -5,6 +5,10 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
+
+    // // 全局中间件计数器
+    // console.log(ctx.session.counter);
+
     ctx.body = 'hi, egg';
   }
 
