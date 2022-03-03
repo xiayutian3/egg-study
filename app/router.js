@@ -40,5 +40,11 @@ module.exports = app => {
   // 测试responsede 的扩展
   router.get('/newResponse', controller.jspang.newResponse);
 
+  // 数据库相关操作测试
+  router.get('/addGirl1', controller.girlsManage.addGirl);
+  router.get('/delGirl1', controller.girlsManage.delGirl);
+  router.get('/updateGirl1', controller.girlsManage.updateGirl);
+  router.get('/getGirls1', controller.girlsManage.getGirls);
+
 
 };
